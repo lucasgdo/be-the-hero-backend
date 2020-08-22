@@ -16,10 +16,12 @@ module.exports = {
 
   staging: {
     client: 'pg',
-    connection: {
-      database: 'my_db',
-      user:     'username',
-      password: 'password'
+    connection: process.env.DB_URL,
+    migrations: {
+      directory: './src/database/migrations'
+    },
+    seeds: {
+      directory: './src/database/seeds'
     }
   },
 
